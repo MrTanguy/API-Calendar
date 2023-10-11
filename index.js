@@ -6,6 +6,7 @@ const getAllDaysOfMonth = (month, year) => {
     // Récupère le dernier jour du mois 
     let totalDay = new Date(year, month+1, 0).getDate()
 
+    // Création du calendrier
     let tableHtml = `<table>  
                         <thead> 
                             <tr> 
@@ -21,6 +22,7 @@ const getAllDaysOfMonth = (month, year) => {
                         <tbody >
                             <tr>`;
 
+    // Loop sur tous les jours du mois
     for (let i = 1 ; i <= totalDay + firstDay ; i++) {
 
         if (i - 1 >= firstDay) {
@@ -29,6 +31,7 @@ const getAllDaysOfMonth = (month, year) => {
             tableHtml += '<td></td>';
         }
 
+        // Gestion de l'affichage des semaines
         if (i % 7 === 0) {
             tableHtml += '</tr>';
         } 
